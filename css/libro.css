@@ -1,0 +1,24 @@
+body{
+    background-color:  #ffffcc;
+}
+.titulo {
+  width: 30%;
+  height: 10%;
+  padding: 10px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #000099;
+
+}
+.informacion{
+width: 50%;
+heith: auto;
+float: left;
+}
+
+h2 {
+  text-align: center;
+}
+.cita{
+  font-style: italic;
+}
