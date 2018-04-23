@@ -3,8 +3,8 @@ body{
 }
 .titulo {
   width: 30%;
-  height: 10%;
-  padding: 10px;
+  height: 20%;
+  padding: 30px;
   margin: 0 auto;
   text-transform: uppercase;
   color: #000099;
@@ -12,8 +12,10 @@ body{
 }
 .informacion{
 width: 50%;
-heith: auto;
+height: auto;
 float: left;
+padding-top: 30px;
+padding-left: 5px;
 }
 
 h2 {
@@ -21,4 +23,12 @@ h2 {
 }
 .cita{
   font-style: italic;
+}
+
+.imagenes{
+  width: 40%;
+  height: auto;
+  padding-top: 30px;
+  padding-left: 15px;
+  float: left;
 }
