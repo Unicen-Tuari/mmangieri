@@ -12,11 +12,10 @@ h1{
 }
 
 h2{
-  position: relative;
   font-size: 30px;
+  margin-top: 10%;
 }
 .contenedorImagen{
-  position: relative;
   margin-bottom: 10%;
   width: 30%;
   height: 30%;
@@ -24,11 +23,17 @@ h2{
 }
 
 .imagen{
-    position: relative;
+
     width:60%;
     height:60%;
    }
 
 .populares{
   clear: both;
+}
+
+footer{
+  clear: both;
+	text-align: center;
+	color: black;
 }
