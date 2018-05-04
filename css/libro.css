@@ -1,6 +1,8 @@
 body{
     background-color:  #ffffcc;
 }
+
+
 div.titulo {
   margin-top: 10%;
   width: 30%;
@@ -39,10 +41,18 @@ div.detalles{
   clear: both;
   width: 50%;
   padding-top: 5%;
-
+  float: left;
 }
 table{
-  margin-left: 30%;
-
+  margin-left: 20%;
   border-style: solid;
+}
+
+.formulario{
+  float: left;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  width: 30%;
+  background: #f2f2f2;
 }
