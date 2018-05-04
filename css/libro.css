@@ -37,7 +37,7 @@ div.imagenes{
   float: left;
 }
 
-div.detalles{
+.detalles{
   clear: both;
   width: 50%;
   padding-top: 5%;
