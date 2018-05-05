@@ -1,0 +1,17 @@
+body{
+  background: grey;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.tablero{
+    margin-top: 5%;
+}
+
+.tablero .carta{
+    width: 20%;
+    height: 40%;
+    float: left;
+}
