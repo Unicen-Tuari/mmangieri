@@ -36,7 +36,8 @@ function taparCartas(tiempo){
 
 function mostrarFelicitacion(nroPartida){
       if (nroPartida=== 3){
-          alert("Felicitaciones!!!!");
+
+          alert("Felicitaciones!!!! Jugaste 3 partidas seguidas");
       }
 }
 
@@ -153,8 +154,20 @@ function generarTablero(){
         cartaDestapada5="images/cartaBlanco.jpg";
       }
   }
-  taparCartas(5);
 }
 
+function mostrarTablero(){
+    generarTablero();
+    taparCartas(5);
+    mostrarFelicitacion(nroPartida);
+    if(nroPartida===3){
+      nroPartida= 1;
+    }
+    else {
+        nroPartida++;
+    }
 
-document.getElementById('btn-comenzar').onclick = generarTablero;
+    console.log(nroPartida);
+}
+
+document.getElementById('btn-comenzar').onclick = mostrarTablero;
