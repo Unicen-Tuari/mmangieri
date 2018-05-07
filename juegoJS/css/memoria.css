@@ -4,6 +4,8 @@ body{
 
 .titulo{
     text-align: center;
+    color: purple;
+    font-size: 30px;
 }
 
 .tablero{
@@ -16,7 +18,23 @@ body{
     float: left;
 }
 
+.tablero .carta .boton{
+      display: inline-block;
+      padding-left: 5%;
+}
+
 .resultados{
-  clear: both;
+  color: white;
+  font-weight: bold;
   margin-top: 10%;
+}
+
+th{
+    font-size: 20px;
+    color: purple;
+}
+
+h2{
+  color: red;
+  font-size: 23px;
 }

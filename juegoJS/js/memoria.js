@@ -7,6 +7,8 @@ let cartaDestapada2;
 let cartaDestapada3;
 let cartaDestapada4;
 let cartaDestapada5;
+let aciertosTotales=0;
+let erroresTotales=0;
 
 function ponerReversoCarta(){
   let carta= document.getElementById("primerCarta");
@@ -48,6 +50,38 @@ function incrementarAciertos(){
 function incrementarErrores(){
 
 }
+
+function contarCartasMarcadas(){
+  let contar=0;
+  if (cartaDestapada1==="images/cartaCruz.jpg") {
+      contar++;
+  }
+  if (cartaDestapada2==="images/cartaCruz.jpg") {
+      contar++;
+  }
+  if (cartaDestapada3==="images/cartaCruz.jpg") {
+      contar++;
+  }
+  if (cartaDestapada4==="images/cartaCruz.jpg") {
+      contar++;
+  }
+  if (cartaDestapada5==="images/cartaCruz.jpg") {
+      contar++;
+    }
+  return contar;
+}
+
+function jugar(){
+  let cartasMarcadas= contarCartasMarcadas();
+  let aciertosParciales=0;
+  let erroresParciales=0;
+
+  if (aciertosParciales===cartasMarcadas){
+    document.querySelector('h2').innerHTML = "Ganaste";
+  }
+
+}
+
 function generarTablero(){
   let carta1;
   let carta2;
@@ -157,8 +191,10 @@ function generarTablero(){
 }
 
 function mostrarTablero(){
+    document.querySelector('h2').innerHTML = "";
     generarTablero();
     taparCartas(5);
+    jugar();
     mostrarFelicitacion(nroPartida);
     if(nroPartida===3){
       nroPartida= 1;
@@ -166,8 +202,6 @@ function mostrarTablero(){
     else {
         nroPartida++;
     }
-
-    console.log(nroPartida);
 }
 
 document.getElementById('btn-comenzar').onclick = mostrarTablero;
