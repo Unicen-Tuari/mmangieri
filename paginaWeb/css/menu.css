@@ -29,9 +29,9 @@
     padding: 0px;
 }
 .desplegable li{
-  display: inline-block;
-  width: 100%;
-  float: left;
+    display: inline-block;
+    width: 100%;
+    float: left;
 }
 .barra li:hover .desplegable{
     display: inline;
@@ -39,10 +39,10 @@
 }
 
 ul li ul.desplegable{
-  position: absolute;
-  width: 200px;
-  display: none;
+    position: absolute;
+    width: 200px;
+    display: none;
 }
 ul li ul.desplegable li{
-  display: block;
+    display: block;
 }

@@ -2,27 +2,27 @@ body{
     background-color:  #ffffcc;
 }
 h1 {
-  width: 30%;
-  height: 20%;
-  padding-left: 40%;
-  color: #000099;
+    width: 30%;
+    height: 20%;
+    padding-left: 40%;
+    color: #000099;
 }
 
 div.fotoAutor {
-  width: auto;
-  height: auto;
-  padding-top: 30px;
-  padding-left: 15px;
-  margin-left: 50px;
-  float: left;
+    width: auto;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 15px;
+    margin-left: 50px;
+    float: left;
 }
 div.informacion {
-  width: 50%;
-  height: auto;
-  padding-left: 10%;
-  font-size: 18px;
-  font-weight: bold;
-  float: left;
+    width: 50%;
+    height: auto;
+    padding-left: 10%;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
 }
 
 div.tablaDatos{
@@ -35,11 +35,13 @@ div.tablaDatos{
     font-size: 18px;
 }
 th {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 div.publicaciones {
     width: 40%;
     height: auto;
     padding-top: 5%;
+    font-style: italic;
+    font-weight: bold;
 }
