@@ -8,6 +8,32 @@ let cartaDestapada3;
 let cartaDestapada4;
 let cartaDestapada5;
 
+function ponerReversoCarta(){
+  let carta= document.getElementById("primerCarta");
+  carta.src= "images/reverso.jpg";
+  carta= document.getElementById("segundaCarta");
+  carta.src= "images/reverso.jpg";
+  carta= document.getElementById("tercerCarta");
+  carta.src= "images/reverso.jpg";
+  carta= document.getElementById("cuartaCarta");
+  carta.src= "images/reverso.jpg";
+  carta= document.getElementById("quintaCarta");
+  carta.src= "images/reverso.jpg";
+}
+
+function taparCartas(tiempo){
+  let intervalo = setInterval(function() {
+    if (tiempo === 0){
+        clearInterval(intervalo);
+        ponerReversoCarta();
+    }
+    else{
+      tiempo--;
+    }
+  }, 1000);
+}
+
+
 function mostrarFelicitacion(nroPartida){
       if (nroPartida=== 3){
           alert("Felicitaciones!!!!");
@@ -127,6 +153,7 @@ function generarTablero(){
         cartaDestapada5="images/cartaBlanco.jpg";
       }
   }
+  taparCartas(5);
 }
 
 
