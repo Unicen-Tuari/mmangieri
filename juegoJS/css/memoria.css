@@ -37,4 +37,5 @@ th{
 h2{
   color: red;
   font-size: 23px;
+  float: left;
 }

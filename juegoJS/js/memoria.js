@@ -43,12 +43,18 @@ function mostrarFelicitacion(nroPartida){
       }
 }
 
-function incrementarAciertos(){
-    //document.querySelector('tfoot tr td:nth-child(2)').innerHTML = calcular();
+function incrementarAciertos(aciertosParciales){
+    aciertosParciales++;
+    aciertosTotales++;
+    document.getElementById('aciertoPartida').innerHTML= aciertosParciales;
+    document.getElementById('aTotal').innerHTML=aciertosTotales;
 }
 
-function incrementarErrores(){
-
+function incrementarErrores(erroresParciales){
+  erroresParciales++;
+  erroresTotales++;
+  document.getElementById('errorPartida').innerHTML= erroresParciales;
+  document.getElementById('eTotal').innerHTML= erroresTotales;
 }
 
 function contarCartasMarcadas(){
