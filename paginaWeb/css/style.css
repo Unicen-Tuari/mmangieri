@@ -1,0 +1,186 @@
+body{
+    background-color:  #ffffcc;
+}
+
+h1{
+    width: auto;
+    height: 10%;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+    color: #000099;
+}
+
+h2{
+    font-size: 30px;
+    margin-top: 10%;
+}
+.contenedorImagen{
+    margin-bottom: 5%;
+    width: 30%;
+    height: 30%;
+    float: left;
+}
+
+.imagen{
+    width:60%;
+    height:60%;
+   }
+
+div.populares{
+    clear: both;
+}
+
+footer{
+    clear: both;
+  	text-align: center;
+  	color: black;
+}
+
+/* Nav */
+.barra{
+    display:inline-block;
+    width:100%;
+    margin:0px auto;
+	  float: left;
+	  position: relative;
+    padding:0;
+    background:#335599
+}
+
+.barra ul li{
+    margin: 6px;
+    float: left;
+    position: relative;
+    list-style: none;
+}
+.barra a{
+    font-family: Arial;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding:  0px 0px;
+    float: none;
+}
+.desplegable{
+    display: inline;
+    margin: 0;
+    padding: 0px;
+}
+.desplegable li{
+    display: inline-block;
+    width: 100%;
+    float: left;
+}
+.barra li:hover .desplegable{
+    display: inline;
+    background-color: #335599;
+}
+
+ul li ul.desplegable{
+    position: absolute;
+    width: 200px;
+    display: none;
+}
+ul li ul.desplegable li{
+    display: block;
+}
+
+
+.tituloAutor {
+    width: 30%;
+    height: 20%;
+    padding-left: 40%;
+}
+
+div.fotoAutor {
+    width: auto;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 15px;
+    margin-left: 50px;
+    float: left;
+}
+div.informacionAutor {
+    width: 50%;
+    height: auto;
+    padding-left: 10%;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+}
+
+div.tablaDatos{
+    clear: both;
+    display: block;
+    width: 40%;
+    height: auto;
+    padding-left: 30%;
+    padding-top: 5%;
+    font-size: 18px;
+}
+th {
+    font-size: 25px;
+}
+
+div.publicaciones {
+    width: 40%;
+    height: auto;
+    padding-top: 5%;
+    font-style: italic;
+    font-weight: bold;
+}
+
+div.titulo{
+    margin-top: 10%;
+    width: 30%;
+    height: 20%;
+    padding: 30px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+div.informacion{
+    width: 50%;
+    height: auto;
+    float: left;
+    padding-top: 30px;
+    padding-left: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+p.cita{
+    font-style: italic;
+}
+
+div.imagenes{
+    width: 40%;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 15px;
+    margin-left: 50px;
+    float: left;
+}
+
+.detalles{
+    clear: both;
+    width: 50%;
+    padding-top: 5%;
+    float: left;
+}
+table{
+    margin-left: 20%;
+    border-style: solid;
+}
+
+div.formulario{
+    float: left;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 30%;
+    background: #f2f2f2;
+}
