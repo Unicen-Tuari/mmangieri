@@ -1,6 +1,6 @@
 "use strict";
 
-let nroPartida;
+let nroPartida=0;
 let contarCartas;
 let tableroInicial= true;
 let cartasDestapadas=[];
@@ -105,20 +105,37 @@ function cargarCartas(){
     }
 }
 
+function finJuego(){
+    let radios = document.getElementsByName('radio');
+    alert("Ganaste!!!");
+    for (let i = 0; i < radios.length; i++) {
+        radios[i].disabled = true;
+    }
+}
+
 function mostrarTablero(){
   nroPartida ++;
+  let tiempo= 0;
   aciertosParciales= 0;
   document.getElementById('aciertoPartida').innerHTML= aciertosParciales;
   erroresParciales= 0;
   document.getElementById('errorPartida').innerHTML= erroresParciales;
   cargarCartas();
-  taparCartas(3);
+  let tiempoInput =  document.getElementById("Tiempo");
+  tiempo = parseInt(tiempoInput.value);
+  taparCartas(tiempo);
   let radios = document.getElementsByName('radio');
-  for (let i = 0; i < radios.length; i++) {
-      radios[i].disabled = false;
-      radios[i].checked=false;
-      cartasUsadas[i]= false;
+  if (contarCartas===0) {
+      finJuego();
   }
+  else{
+      for (let i = 0; i < radios.length; i++) {
+          radios[i].disabled = false;
+          radios[i].checked=false;
+          cartasUsadas[i]= false;
+      }
+  }
+  mostrarFelicitacion(nroPartida);
 }
 
 function obtenerValorRadioBtn(){
@@ -146,16 +163,10 @@ function jugar(){
           let radios = document.getElementsByName('radio');
           radios[botonCheckeado].disabled = true;
           if(contarCartas===0){
-              alert("Ganaste!!");
-              for (let i = 0; i < radios.length; i++) {
-                  radios[i].disabled = true;
-              }
+              finJuego();
           }
-          mostrarFelicitacion(nroPartida);
-          // MUESTRA SIEMPRE Y NO CUANDO DEBE
-          // FALTA EL CARTEL QUE GANO CUANDO NO HAY NINGUNA MARCA
     }else {
-      alert ("No seleccionaste ninguna carta activa!!");
+        alert ("No seleccionaste ninguna carta activa!!");
     }
 }
 
