@@ -25,9 +25,9 @@ function incrementarErrores(){
   document.getElementById('eTotal').innerHTML= erroresTotales;
 }
 
-function mostrarFelicitacion(nroPartida){
+function mostrarFelicitacion(){
   if (nroPartida===3){
-      nroPartida=0;
+      nroPartida= 0;
       alert("Felicitaciones!!! Jugaste 3 partidas seguidas");
   }
 }
@@ -106,15 +106,16 @@ function cargarCartas(){
 }
 
 function finJuego(){
+    nroPartida ++;
     let radios = document.getElementsByName('radio');
     alert("Ganaste!!!");
     for (let i = 0; i < radios.length; i++) {
         radios[i].disabled = true;
     }
+    mostrarFelicitacion();
 }
 
 function mostrarTablero(){
-  nroPartida ++;
   let tiempo= 0;
   aciertosParciales= 0;
   document.getElementById('aciertoPartida').innerHTML= aciertosParciales;
@@ -135,7 +136,7 @@ function mostrarTablero(){
           cartasUsadas[i]= false;
       }
   }
-  mostrarFelicitacion(nroPartida);
+
 }
 
 function obtenerValorRadioBtn(){
@@ -145,12 +146,12 @@ function obtenerValorRadioBtn(){
         return parseInt(eleccion[i].value,10);
     }
   }
-  return null;
+  return 999;
 }
 
 function jugar(){
     let botonCheckeado= obtenerValorRadioBtn();
-    if ((botonCheckeado!== null) &&(!cartasUsadas[botonCheckeado])){
+    if ((botonCheckeado!== 999) &&(!cartasUsadas[botonCheckeado])){
           if (cartasDestapadas[botonCheckeado]==='x') {
                incrementarAciertos();
                contarCartas--;
