@@ -16,5 +16,11 @@ class blogLiterarioController{
     $this->blogLiterarioView->mostrarAutores($autores);
   }
 
+  function mostrarLibro($params= []){
+      $libro=$this->blogLiterarioModel->obtenerLibro($params[0]);
+      $this->blogLiterarioView->mostrarLibro($libro);
+  }
+
+
 }
  ?>
