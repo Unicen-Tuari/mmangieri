@@ -12,15 +12,20 @@ class blogLiterarioController{
   }
 
   function mostrarAutores($params=[]){
-    $autores= $this->blogLiterarioModel->obtenerAutores();
-    $this->blogLiterarioView->mostrarAutores($autores);
+		$autores= $this->blogLiterarioModel->obtenerAutores();
+		$this->blogLiterarioView->mostrarAutores($autores);
   }
 
   function mostrarLibro($params= []){
-      $libro=$this->blogLiterarioModel->obtenerLibro($params[0]);
-      $this->blogLiterarioView->mostrarLibro($libro);
+		$libro=$this->blogLiterarioModel->obtenerLibro($params[0]);
+		$this->blogLiterarioView->mostrarLibro($libro);
   }
 
-
+  function mostrarLibrosAutor($params= []){
+		$librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($params[0]);
+		$autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
+		$this->blogLiterarioView->mostrarLibrosAutor($librosAutor, $autor);
+  }
+  
 }
  ?>

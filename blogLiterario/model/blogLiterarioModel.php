@@ -12,6 +12,12 @@ class blogLiterarioModel{
       $sentencia->execute();
       return $sentencia->fetchAll();
     }
+	
+	function obtenerAutor($id_autor){
+      $sentencia = $this->db->prepare("SELECT * from autor where id_autor = ?");
+      $sentencia->execute([$id_autor]);
+      return $sentencia->fetch();
+    }
 
     function obtenerLibro($id_libro){
       $sentencia = $this->db->prepare("SELECT * from libro where id_libro=?");
@@ -22,7 +28,7 @@ class blogLiterarioModel{
     function obtenerLibrosAutor($id_autor){
       $sentencia= $this->db->prepare("SELECT * from libro where id_autor=?");
       $sentencia->execute([$id_autor]);
-      return $sentencia->fechtAll();
+      return $sentencia->fetchAll();
     }
     
 }

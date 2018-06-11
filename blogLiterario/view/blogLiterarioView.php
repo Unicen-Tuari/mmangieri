@@ -16,6 +16,11 @@ class blogLiterarioView{
       $this->smarty->assign("libro",$libro);
       $this->smarty->display("mostrarLibro.tpl");
     }
+	function mostrarLibrosAutor($librosAutor, $autor){
+      $this->smarty->assign("librosAutor", $librosAutor);
+      $this->smarty->assign("autor", $autor);
+      $this->smarty->display("mostrarLibrosAutor.tpl");
+    }
 }
 
 ?>
