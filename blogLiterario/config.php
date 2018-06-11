@@ -6,6 +6,7 @@ $acciones = [
 //  "ver"
   "verAutores"=> "blogLiterarioController*mostrarAutores",
   "verLibrosAutor"=>"blogLiterarioController*mostrarLibrosAutor",
-  "verLibro"=>"blogLiterarioController*mostrarLibro"
+  "verLibro"=>"blogLiterarioController*mostrarLibro",
+  "crearLibro"=>"blogLiterarioController*crearLibro"
 ];
 ?>

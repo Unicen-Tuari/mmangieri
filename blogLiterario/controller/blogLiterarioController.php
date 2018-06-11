@@ -27,6 +27,9 @@ class blogLiterarioController{
 		$autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
 		$this->blogLiterarioView->mostrarLibrosAutor($librosAutor, $autor);
   }
+    function crearLibro($params = []){
+      $this->blogLiterarioView->mostrarCrearLibro();
+  }
   
 }
  ?>
