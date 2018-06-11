@@ -1,5 +1,5 @@
 {include file= "header.tpl"}
-<form action="crearLibro" method="post">
+<form action="guardarLibro" method="post">
     <label for="titulo"> Titulo</label>
     <input type="text" name="titulo" value="">
     <label for="autor"> Autor</label>

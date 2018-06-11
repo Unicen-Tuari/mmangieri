@@ -7,6 +7,7 @@ $acciones = [
   "verAutores"=> "blogLiterarioController*mostrarAutores",
   "verLibrosAutor"=>"blogLiterarioController*mostrarLibrosAutor",
   "verLibro"=>"blogLiterarioController*mostrarLibro",
-  "crearLibro"=>"blogLiterarioController*crearLibro"
+  "crearLibro"=>"blogLiterarioController*crearLibro",
+  "guardarLibro"=>"blogLiterarioController*guardarLibro"
 ];
 ?>

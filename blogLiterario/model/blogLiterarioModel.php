@@ -18,6 +18,12 @@ class blogLiterarioModel{
       $sentencia->execute([$id_autor]);
       return $sentencia->fetch();
     }
+	
+	function obtenerIdAutor($nombre){
+      $sentencia = $this->db->prepare("SELECT * from autor where nombre= ?");
+      $sentencia->execute([$nombre]);
+      return $sentencia->fetch();
+    }
 
     function obtenerLibro($id_libro){
       $sentencia = $this->db->prepare("SELECT * from libro where id_libro=?");
@@ -31,5 +37,12 @@ class blogLiterarioModel{
       return $sentencia->fetchAll();
     }
     
+	function insertarLibro($libro){
+      $this->db->beginTransaction();
+      $sentencia= $this->db->prepare("INSERT INTO libro(id_autor, titulo, genero, sinopsis) VALUES (?,?,?,?)");
+      $sentencia->execute([$libro['id_autor'], $libro['titulo'], $libro['genero'], $libro['sinopsis']]);
+      $this->db->commit();
+      return $this->db->lastInsertId();
+    }
 }
 ?>

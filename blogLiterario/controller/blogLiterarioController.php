@@ -31,5 +31,15 @@ class blogLiterarioController{
       $this->blogLiterarioView->mostrarCrearLibro();
   }
   
+  function guardarLibro($params = []){
+    $autor= $this->blogLiterarioModel->obtenerIdAutor($_POST['autor']);
+    $libro= ['id_autor'=>$autor['id_autor'],
+              'titulo'=> $_POST['titulo'],
+              'genero'=>$_POST['genero'],
+              'sinopsis'=>$_POST['sinopsis']
+            ];
+    $this->blogLiterarioModel->insertarLibro($libro);
+  }
+  
 }
  ?>
