@@ -41,5 +41,10 @@ class blogLiterarioController{
     $this->blogLiterarioModel->insertarLibro($libro);
   }
   
+  function crearAutor($params = []){
+      $this->blogLiterarioView->mostrarCrearAutor();
+  }
+
+  
 }
  ?>

@@ -8,6 +8,8 @@ $acciones = [
   "verLibrosAutor"=>"blogLiterarioController*mostrarLibrosAutor",
   "verLibro"=>"blogLiterarioController*mostrarLibro",
   "crearLibro"=>"blogLiterarioController*crearLibro",
-  "guardarLibro"=>"blogLiterarioController*guardarLibro"
+  "guardarLibro"=>"blogLiterarioController*guardarLibro",
+  "crearAutor"=>"blogLiterarioController*crearAutor",
+  "guardarAutor"=>"blogLiterarioController*guardarAutor"
 ];
 ?>
