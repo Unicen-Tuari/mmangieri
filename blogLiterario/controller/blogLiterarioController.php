@@ -45,6 +45,12 @@ class blogLiterarioController{
       $this->blogLiterarioView->mostrarCrearAutor();
   }
 
+  function guardarAutor($params = []){
+    $autor=['nombre'=>$_POST['nombre'],
+            'biografia'=>$_POST['biografia']
+          ];
+    $this->blogLiterarioModel->insertarAutor($autor);
+  }
   
 }
  ?>

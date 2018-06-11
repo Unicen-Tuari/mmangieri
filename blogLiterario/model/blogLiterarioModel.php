@@ -44,5 +44,14 @@ class blogLiterarioModel{
       $this->db->commit();
       return $this->db->lastInsertId();
     }
+	
+	function insertarAutor($autor){
+      $this->db->beginTransaction();
+      $sentencia= $this->db->prepare("INSERT INTO autor(nombre, biografia) VALUES (?,?)");
+      $sentencia->execute([$autor['nombre'], $autor['biografia']]);
+      $this->db->commit();
+      return $this->db->lastInsertId();
+    }
+	
 }
 ?>
