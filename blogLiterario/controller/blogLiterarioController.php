@@ -52,5 +52,14 @@ class blogLiterarioController{
     $this->blogLiterarioModel->insertarAutor($autor);
   }
   
+  function borrarLibro($params = []){
+      $this->blogLiterarioModel->borrarLibro($params[0]);
+    
+  }
+  function borrarAutor($params = []){
+      $this->blogLiterarioModel->borrarAutor($params[0]);
+      $this->blogLiterarioView->mostrarAutores();
+  }
+  
 }
  ?>

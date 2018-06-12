@@ -53,5 +53,15 @@ class blogLiterarioModel{
       return $this->db->lastInsertId();
     }
 	
+	function borrarLibro($id_libro){
+      $sentencia= $this->db->prepare("DELETE from libro where id_libro= ?");
+      $sentencia->execute([$id_libro]);
+
+    }
+	
+	function borrarAutor($id_autor){
+      $sentencia= $this->db->prepare("DELETE from autor where id_autor= ?");
+      $sentencia->execute([$id_autor]);
+    }
 }
 ?>
