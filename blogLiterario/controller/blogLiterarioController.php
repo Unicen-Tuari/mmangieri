@@ -58,7 +58,7 @@ class blogLiterarioController{
   }
   function borrarAutor($params = []){
       $this->blogLiterarioModel->borrarAutor($params[0]);
-      $this->blogLiterarioView->mostrarAutores();
+      $this->mostrarAutores();
   }
   
 }
