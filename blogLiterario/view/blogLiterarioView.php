@@ -30,5 +30,10 @@ class blogLiterarioView{
       $this->smarty->display("crearAutor.tpl");
     }
 	
+	function listarLibros($libros, $autores){
+      $this->smarty->assign("libros", $libros);
+      $this->smarty->assign("autores", $autores);
+      $this->smarty->display("listarLibros.tpl");
+    }
 }
 ?>

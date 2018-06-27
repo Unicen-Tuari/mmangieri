@@ -4,6 +4,7 @@ $acciones = [
   // "login" => "LoginController#validarLogin",
   // "logout" => "LoginController#logout",
 //  "ver"
+  "listarLibros"=>"blogLiterarioController*listarLibros",
   "verAutores"=> "blogLiterarioController*mostrarAutores",
   "verLibrosAutor"=>"blogLiterarioController*mostrarLibrosAutor",
   "verLibro"=>"blogLiterarioController*mostrarLibro",

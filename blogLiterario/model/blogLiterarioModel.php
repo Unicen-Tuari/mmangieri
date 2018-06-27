@@ -63,5 +63,11 @@ class blogLiterarioModel{
       $sentencia= $this->db->prepare("DELETE from autor where id_autor= ?");
       $sentencia->execute([$id_autor]);
     }
+	
+	function listarLibros(){
+      $sentencia=$this->db->prepare("SELECT * from libro");
+      $sentencia->execute();
+      return $sentencia->fetchAll();
+    }
 }
 ?>
