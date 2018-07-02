@@ -69,5 +69,12 @@ class blogLiterarioModel{
       $sentencia->execute();
       return $sentencia->fetchAll();
     }
+	  
+    function editarLibro($libro){
+
+      $sentencia= $this->db->prepare("UPDATE libro SET titulo= ?, id_autor=?, genero=?, sinopsis=? where id_libro= ?");
+      $sentencia->execute([$libro['titulo'], $libro['id_autor'], $libro['genero'], $libro['sinopsis'], $libro['id_libro']]);
+
+    }
 }
 ?>
