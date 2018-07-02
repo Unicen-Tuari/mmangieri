@@ -17,23 +17,23 @@ class blogLiterarioView{
       $this->smarty->assign("autor", $autor);
       $this->smarty->display("mostrarLibro.tpl");
     }
-	function mostrarLibrosAutor($librosAutor, $autor){
+
+    function mostrarLibrosAutor($librosAutor, $autor){
       $this->smarty->assign("librosAutor", $librosAutor);
       $this->smarty->assign("autor", $autor);
       $this->smarty->display("mostrarLibrosAutor.tpl");
     }
-	function mostrarCrearLibro(){
-      $this->smarty->display("crearLibro.tpl");
-    }
 
-    function mostrarCrearAutor(){
-      $this->smarty->display("crearAutor.tpl");
-    }
-	
-	function listarLibros($libros, $autores){
+
+    function listarLibros($libros, $autores){
       $this->smarty->assign("libros", $libros);
       $this->smarty->assign("autores", $autores);
       $this->smarty->display("listarLibros.tpl");
+    }
+
+    function mostrarDetalleAutor($autor){
+      $this->smarty->assign("autor",$autor);
+      $this->smarty->display("mostrarDetalleAutor.tpl");
     }
 }
 ?>

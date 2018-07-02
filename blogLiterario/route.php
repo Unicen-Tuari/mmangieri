@@ -2,8 +2,7 @@
   DEFINE('BASEURL','//'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/');
   require_once "config.php";
   require_once "controller/blogLiterarioController.php";
-  //require_once "controller"; AGREGAR EL CONTROLLER!!!!
-
+  require_once "controller/adminController.php";
 
   $params= explode("/", $_GET["action"]);
   $action= $params[0];
@@ -15,5 +14,5 @@
 
   $controllerObjeto= new $controller();
   $controllerObjeto->$funcion($others);
-
   ?>
+
