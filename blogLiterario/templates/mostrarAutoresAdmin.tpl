@@ -4,6 +4,9 @@
     <div class="col-md-2 col-xs-2 col-sm-2">
     </div>
     <div class="col-md-8 col-xs-8 col-sm-8">
+	<form action="{BASEURL}crearAutor" method="get">
+          <button type="submit" class="btn btn-success" >Agregar autor</button>
+     </form>
   <table class="table table-striped">
     <thead>
       <tr>

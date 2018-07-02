@@ -68,13 +68,19 @@ class adminController{
       }
 
       function borrarLibro($params = []){
+          $libro= $this->blogLiterarioModel->obtenerLibro($params[0]);
+          $autor=$this->blogLiterarioModel->obtenerAutor($libro['id_autor']);
           $this->blogLiterarioModel->borrarLibro($params[0]);
+          $librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($autor['id_autor']);
+          $this->adminView->mostrarLibrosAutor($librosAutor,$autor);
+
 
       }
 
       function borrarAutor($params = []){
-            $this->blogLiterarioModel->borrarAutor($params[0]);
-            // $this->mostrarAutores();
+             $this->blogLiterarioModel->borrarAutor($params[0]);
+            $autores= $this->blogLiterarioModel->obtenerAutores();
+            $this->adminView->mostrarAutores($autores);
           }
 
       function editarAutor($params = []){
