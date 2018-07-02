@@ -12,8 +12,8 @@ class blogLiterarioController{
   }
 
   function mostrarAutores($params=[]){
-		$autores= $this->blogLiterarioModel->obtenerAutores();
-		$this->blogLiterarioView->mostrarAutores($autores);
+    $autores= $this->blogLiterarioModel->obtenerAutores();
+    $this->blogLiterarioView->mostrarAutores($autores);
   }
 
   function mostrarLibro($params= []){
@@ -23,48 +23,22 @@ class blogLiterarioController{
   }
 
   function mostrarLibrosAutor($params= []){
-		$librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($params[0]);
-		$autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
-		$this->blogLiterarioView->mostrarLibrosAutor($librosAutor, $autor);
-  }
-    function crearLibro($params = []){
-      $this->blogLiterarioView->mostrarCrearLibro();
-  }
-  
-  function guardarLibro($params = []){
-    $autor= $this->blogLiterarioModel->obtenerIdAutor($_POST['autor']);
-    $libro= ['id_autor'=>$autor['id_autor'],
-              'titulo'=> $_POST['titulo'],
-              'genero'=>$_POST['genero'],
-              'sinopsis'=>$_POST['sinopsis']
-            ];
-    $this->blogLiterarioModel->insertarLibro($libro);
-  }
-  
-  function crearAutor($params = []){
-      $this->blogLiterarioView->mostrarCrearAutor();
+      $librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($params[0]);
+      $autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
+      $this->blogLiterarioView->mostrarLibrosAutor($librosAutor, $autor);
   }
 
-  function guardarAutor($params = []){
-    $autor=['nombre'=>$_POST['nombre'],
-            'biografia'=>$_POST['biografia']
-          ];
-    $this->blogLiterarioModel->insertarAutor($autor);
-  }
-  
-  function borrarLibro($params = []){
-      $this->blogLiterarioModel->borrarLibro($params[0]);
-    
-  }
-  function borrarAutor($params = []){
-      $this->blogLiterarioModel->borrarAutor($params[0]);
-      $this->mostrarAutores();
-  }
-  
+
   function listarLibros($params= []){
       $libros= $this->blogLiterarioModel->listarLibros();
       $autores= $this->blogLiterarioModel->obtenerAutores();
       $this->blogLiterarioView->listarLibros($libros, $autores);
+  }
+
+
+  function mostrarDetalleAutor($params= []){
+      $autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
+      $this->blogLiterarioView->mostrarDetalleAutor($autor);
   }
 }
  ?>
