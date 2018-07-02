@@ -24,9 +24,7 @@ class adminController{
                   'sinopsis'=>$_POST['sinopsis']
                 ];
         $this->blogLiterarioModel->insertarLibro($libro);
-        $librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($libro['id_autor']);
-        $autor=$this->blogLiterarioModel->obtenerAutor($libro['id_autor']);
-        $this->adminView->mostrarLibrosAutor($librosAutor,$autor);
+       header("Location: ".BASEURL."verLibrosAutorAdmin/".$libro['id_autor']);
       }
 
       function actualizarLibro($params = []){
@@ -38,9 +36,7 @@ class adminController{
               ];
 
         $this->blogLiterarioModel->editarLibro($libro);
-        $librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($libro['id_autor']);
-        $autor=$this->blogLiterarioModel->obtenerAutor($libro['id_autor']);
-        $this->adminView->mostrarLibrosAutor($librosAutor,$autor);
+        header("Location: ".BASEURL."verLibrosAutorAdmin/".$libro['id_autor']);
       }
 
       function crearAutor($params = []){
@@ -52,8 +48,7 @@ class adminController{
                 'biografia'=>$_POST['biografia']
               ];
         $this->blogLiterarioModel->insertarAutor($autor);
-        $autores= $this->blogLiterarioModel->obtenerAutores();
-        $this->adminView->mostrarAutores($autores);
+        header("Location: ".BASEURL."verAutoresAdmin");
       }
 
       function actualizarAutor($params = []){
@@ -63,24 +58,21 @@ class adminController{
               ];
 
         $this->blogLiterarioModel->editarAutor($autor);
-        $autores= $this->blogLiterarioModel->obtenerAutores();
-        $this->adminView->mostrarAutores($autores);
+        header("Location: ".BASEURL."verAutoresAdmin");
       }
 
       function borrarLibro($params = []){
           $libro= $this->blogLiterarioModel->obtenerLibro($params[0]);
           $autor=$this->blogLiterarioModel->obtenerAutor($libro['id_autor']);
           $this->blogLiterarioModel->borrarLibro($params[0]);
-          $librosAutor= $this->blogLiterarioModel->obtenerLibrosAutor($autor['id_autor']);
-          $this->adminView->mostrarLibrosAutor($librosAutor,$autor);
+          header("Location: ".BASEURL."verLibrosAutorAdmin/".$libro['id_autor']);
 
 
       }
 
       function borrarAutor($params = []){
              $this->blogLiterarioModel->borrarAutor($params[0]);
-            $autores= $this->blogLiterarioModel->obtenerAutores();
-            $this->adminView->mostrarAutores($autores);
+            header("Location: ".BASEURL."verAutoresAdmin");
           }
 
       function editarAutor($params = []){
