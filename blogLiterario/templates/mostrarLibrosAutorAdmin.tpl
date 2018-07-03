@@ -1,11 +1,14 @@
 {include file="header.tpl"}
-
+{include file="navAdmin.tpl"}
 <h1 class="text-center"> {$autor['nombre']} </h1>
 
 <div class="row">
     <div class="col-md-2 col-xs-2 col-sm-2">
     </div>
     <div class="col-md-8 col-xs-8 col-sm-8">
+      <form action="{BASEURL}crearLibro" method="get">
+          <button type="submit" class="btn btn-success" >Agregar libro</button>
+     </form>
         <table class="table table-striped">
           <thead>
             <tr>
@@ -17,7 +20,7 @@
           <tbody>
               {foreach from= $librosAutor item= libros}
                   <tr>
-                    <td><a href="{BASEURL}verLibro/{$libros['id_libro']}"> {$libros['titulo']}</a></td>
+                    <td><a href="{BASEURL}verLibroAdmin/{$libros['id_libro']}"> {$libros['titulo']}</a></td>
                     <td>
                        <form action="{BASEURL}editarLibro/{$libros['id_libro']}" method="get">
                            <button type="submit" class="btn btn-info" ><i class="glyphicon glyphicon-edit"></i></button>
