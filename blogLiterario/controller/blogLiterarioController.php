@@ -28,13 +28,11 @@ class blogLiterarioController{
       $this->blogLiterarioView->mostrarLibrosAutor($librosAutor, $autor);
   }
 
-
   function listarLibros($params= []){
       $libros= $this->blogLiterarioModel->listarLibros();
       $autores= $this->blogLiterarioModel->obtenerAutores();
       $this->blogLiterarioView->listarLibros($libros, $autores);
   }
-
 
   function mostrarDetalleAutor($params= []){
       $autor= $this->blogLiterarioModel->obtenerAutor($params[0]);

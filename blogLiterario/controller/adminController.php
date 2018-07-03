@@ -1,8 +1,9 @@
 <?php
 require_once "./model/blogLiterarioModel.php";
+require_once "./controller/SecureController.php";
 require_once "./view/adminView.php";
 
-class adminController{
+class adminController extends SecureController{
     private $adminView;
     private $blogLiterarioModel;
 
@@ -18,10 +19,10 @@ class adminController{
 
 	function guardarLibro($params = []){
 		$libro=['id_autor'=>$_POST['autor'],
-   				'titulo'=> $_POST['titulo'],
+				'titulo'=> $_POST['titulo'],
 				'genero'=>$_POST['genero'],
 				'sinopsis'=>$_POST['sinopsis']
-					];
+				];
 		$this->blogLiterarioModel->insertarLibro($libro);
 		header("Location: ".BASEURL."verLibrosAutorAdmin/".$libro['id_autor']);
 	}
@@ -101,7 +102,11 @@ class adminController{
 	function listarLibros($params= []){
 		$libros= $this->blogLiterarioModel->listarLibros();
 		$autores= $this->blogLiterarioModel->obtenerAutores();
-		$this->blogLiterarioView->listarLibros($libros, $autores);
+		$this->adminView->listarLibros($libros, $autores);
+	}
+	function mostrarDetalleAutor($params= []){
+		$autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
+		$this->adminView->mostrarDetalleAutor($autor);
 	}
 }
 ?>

@@ -38,7 +38,7 @@ class adminView{
     function listarLibros($libros, $autores){
       $this->smarty->assign("libros", $libros);
       $this->smarty->assign("autores", $autores);
-      $this->smarty->display("listarLibros.tpl");
+      $this->smarty->display("listarLibrosAdmin.tpl");
     }
 
     function mostrarEditarAutor($autor){
@@ -50,6 +50,10 @@ class adminView{
         $this->smarty->assign("autores", $autores);
         $this->smarty->display("editarlibro.tpl");
     }
+    function mostrarDetalleAutor($autor){
+      $this->smarty->assign("autor",$autor);
+      $this->smarty->display("mostrarDetalleAutorAdmin.tpl");
+    }
+  
 }
-
  ?>
