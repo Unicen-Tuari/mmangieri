@@ -8,18 +8,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{BASEURL}listarLibrosAdmin">Inicio</a>
+      <a class="navbar-brand" href="{BASEURL}listarLibros">Inicio</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <!-- <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1"> -->
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{BASEURL}verAutoresAdmin">Autores</a></li>
-        <li class="active"><a href="{BASEURL}listarLibrosAdmin">Libros</a></li>
+        <li class="active"><a href="{BASEURL}verAutores">Autores</a></li>
+        <li class="active"><a href="{BASEURL}listarLibros">Libros</a></li>
+        <li class="active"><a href="{BASEURL}listarUsuarios">Usuarios</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{BASEURL}">logout</a></li>
+        <li><a href="{BASEURL}listarLibros">logout</a></li>
 
       </ul>
     <!-- </div><! /.navbar-collapse -->
