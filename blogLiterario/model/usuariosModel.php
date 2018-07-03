@@ -16,6 +16,14 @@ class UsuariosModel {
     $sentencia->execute([$email]);
     return $sentencia->fetch();
   }
+  
+    function retornarUsuario($id_usuario)
+  {
+    $sentencia = $this->db->prepare( "SELECT * from usuario where id_usuario = ?");
+    $sentencia->execute([$id_usuario]);
+    return $sentencia->fetch();
+  }
+  
   function ingresarUsuario($usuario){
     $this->db->beginTransaction();
     $sentencia= $this->db->prepare("INSERT INTO usuario(email, pass, nombre, apellido) VALUES (?,?,?,?)");

@@ -1,9 +1,9 @@
 <?php
-require_once "./model/usuarioModel.php";
+require_once "./model/usuariosModel.php";
 require_once "controller/SecureController.php";
 require_once "./view/usuarioView.php";
 
-class usuarioController extends SecureController{
+class usuariosController extends SecureController{
   private $usuariosModel;
   private $usuarioView;
 
@@ -14,8 +14,8 @@ class usuarioController extends SecureController{
 
   function listarUsuarios($params=[]){
     session_start();
-    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
-      $usuarios= $this->usuarioModel->listarUsuarios();
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
+      $usuarios= $this->usuariosModel->listarUsuarios();
       $this->usuarioView->listarUsuarios($usuarios);
     }
   }
@@ -31,27 +31,28 @@ class usuarioController extends SecureController{
     PageHelpers::homePage();
   }
 
-    function sacarPermisos($params = []){
-    session_start();
-    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
-        $usuario= $this->usuariosModel->obtenerUsuario($params[0]);
-        if ($usuario['administrador']){
-            $this->usuariosModel->editarPermisos($usuario['id_usuario'],0);
+  function editarPermisos($params = []){
+     session_start();
+     if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
+        $usuario= $this->usuariosModel->retornarUsuario($params[0]);
+        if ($usuario['administrador'] == '1'){
+            $this->usuariosModel->editarPermisos($usuario['id_usuario'], '0');
         }
         else{
-            $this->usuariosModel->editarPermisos($usuario['id_usuario'],1);
+            $this->usuariosModel->editarPermisos($usuario['id_usuario'], '1');
         }
         PageHelpers::usuariosPage();
-    }
+     }
   }
 
   function borrarUsuario($params = []){
     session_start();
-    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
-        $this->blogLiterarioModel->borrarUsuario($params[0]);
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
+        $this->usuariosModel->borrarUsuario($params[0]);
         PageHelpers::usuariosPage();
       }
   }
+
 
 }
  ?>
