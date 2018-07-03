@@ -13,8 +13,11 @@ class usuarioController extends SecureController{
   }
 
   function listarUsuarios($params=[]){
-    $usuarios= $this->usuarioModel->listarUsuarios();
-    $this->usuarioView->listarUsuarios($usuarios);
+    session_start();
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+      $usuarios= $this->usuarioModel->listarUsuarios();
+      $this->usuarioView->listarUsuarios($usuarios);
+    }
   }
 
   function ingresarUsuario($params = []){
@@ -28,7 +31,9 @@ class usuarioController extends SecureController{
     PageHelpers::homePage();
   }
 
-  function sacarPermisos($params = []){
+    function sacarPermisos($params = []){
+    session_start();
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
         $usuario= $this->usuariosModel->obtenerUsuario($params[0]);
         if ($usuario['administrador']){
             $this->usuariosModel->editarPermisos($usuario['id_usuario'],0);
@@ -36,9 +41,17 @@ class usuarioController extends SecureController{
         else{
             $this->usuariosModel->editarPermisos($usuario['id_usuario'],1);
         }
+        PageHelpers::usuariosPage();
     }
+  }
 
-
+  function borrarUsuario($params = []){
+    session_start();
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+        $this->blogLiterarioModel->borrarUsuario($params[0]);
+        PageHelpers::usuariosPage();
+      }
+  }
 
 }
  ?>

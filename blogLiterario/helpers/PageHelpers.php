@@ -31,7 +31,11 @@ class PageHelpers
     header("Location: ".BASEURL."verAutores");
     die();
   }
-
+  public static function usuariosPage()
+  {
+    header("Location: ".BASEURL."listarUsuarios");
+    die();
+  }
 }
 
 
