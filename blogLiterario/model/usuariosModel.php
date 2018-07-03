@@ -29,10 +29,10 @@ class UsuariosModel {
       $sentencia->execute([$id_usuario]);
     }
 
-    //function editarPermisos($id_usuario, $permiso){
-    //  $sentencia= $this->db->prepare("UPDATE usuario set administrador=? where id_usuario=?");
-    //  $sentencia->execute([[$permiso],[$id_usuario]]);
-    //}
+    function editarPermisos($id_usuario, $permiso){
+      $sentencia= $this->db->prepare("UPDATE usuario set administrador=? where id_usuario=?");
+      $sentencia->execute([[$permiso],[$id_usuario]]);
+    }
 
     function listarUsuarios(){
       $sentencia= $this->db->prepare("SELECT * from usuario");
