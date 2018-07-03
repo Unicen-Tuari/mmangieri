@@ -12,12 +12,12 @@
 
 			{foreach from=$libros item=libro}
 				<div class="col-md-4 col-xs-12 col-sm-5">
-				<a href="{BASEURL}verLibroUsuario/{$libro['id_libro']}">
+				<a href="{BASEURL}verLibro/{$libro['id_libro']}">
 				<img src="{BASEURL}images/{$libro['titulo']}.jpg" class="img-rounded img-thumbnail img-responsive center-block" alt="{$libro['titulo']}"></a>
-				<p class="text-center"><a href="{BASEURL}verLibroUsuario/{$libro['id_libro']}">{$libro['titulo']}</a></p>
+				<p class="text-center"><a href="{BASEURL}verLibro/{$libro['id_libro']}">{$libro['titulo']}</a></p>
 					{foreach from=$autores item=autor}
 						{if ($autor['id_autor'] == $libro['id_autor'])}
-							<p class="text-center"><a href="{BASEURL}mostrarDetalleAutorUsuario/{$autor['id_autor']}">{$autor['nombre']}</a></p>
+							<p class="text-center"><a href="{BASEURL}mostrarDetalleAutor/{$autor['id_autor']}">{$autor['nombre']}</a></p>
 						{/if}
 					{/foreach}
 				</div>

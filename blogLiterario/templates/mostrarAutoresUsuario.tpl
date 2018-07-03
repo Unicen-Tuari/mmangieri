@@ -7,7 +7,7 @@
     </div>
     <div class="col-md-10 col-xs-10 col-sm-10">
         {foreach from=$autores item=autor}
-            <h3><a href="{BASEURL}verLibrosAutorUsuario/{$autor['id_autor']}">{$autor['nombre']}</a>
+            <h3><a href="{BASEURL}verLibrosAutor/{$autor['id_autor']}">{$autor['nombre']}</a>
             </h3>
         {/foreach}
     </div>

@@ -23,7 +23,7 @@
 		<tbody>
 			{foreach from=$autores item=autor}
 				<tr>
-					<td><a href="{BASEURL}verLibrosAutorAdmin/{$autor['id_autor']}">{$autor['nombre']}</a></td>
+					<td><a href="{BASEURL}verLibrosAutor/{$autor['id_autor']}">{$autor['nombre']}</a></td>
 					<td>
 						<form action="{BASEURL}editarAutor/{$autor['id_autor']}" method="get">
 							<button type="submit" class="btn btn-info" ><i class="glyphicon glyphicon-edit"></i></button>

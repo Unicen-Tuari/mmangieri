@@ -20,7 +20,7 @@
           <tbody>
               {foreach from= $librosAutor item= libros}
                   <tr>
-                    <td><a href="{BASEURL}verLibroAdmin/{$libros['id_libro']}"> {$libros['titulo']}</a></td>
+                    <td><a href="{BASEURL}verLibro/{$libros['id_libro']}"> {$libros['titulo']}</a></td>
                     <td>
                        <form action="{BASEURL}editarLibro/{$libros['id_libro']}" method="get">
                            <button type="submit" class="btn btn-info" ><i class="glyphicon glyphicon-edit"></i></button>
