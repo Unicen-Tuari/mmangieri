@@ -7,6 +7,7 @@ class usuariosController extends SecureController{
   private $usuariosModel;
   private $usuarioView;
 
+
   function __construct(){
       $this->usuariosModel= new usuariosModel();
       $this->usuarioView= new usuarioView();
@@ -28,7 +29,11 @@ class usuariosController extends SecureController{
                'apellido'=> $_POST['apellido']
              ];
     $this->usuariosModel->ingresarUsuario($usuario);
-    PageHelpers::homePage();
+    session_start();
+    $_SESSION['email'] = $usuario['email'];
+    $_SESSION['ultima_conexion'] = time();
+    $_SESSION['administrador'] = '0';
+      PageHelpers::homePage();
   }
 
   function editarPermisos($params = []){

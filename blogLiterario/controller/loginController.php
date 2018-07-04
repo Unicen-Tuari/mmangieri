@@ -8,7 +8,7 @@ class LoginController {
   private $loginView;
 
   function __construct(){
-    $this->usuariosModel = new UsuariosModel();
+    $this->usuariosModel = new usuariosModel();
     $this->loginView = new LoginView();
   }
 
@@ -30,14 +30,9 @@ class LoginController {
     if(password_verify($_POST['pass'], $usuario['pass'])){
       session_start();
       $_SESSION['email'] = $_POST['email'];
-     $_SESSION['ultima_conexion'] = time();
-      if($usuario['administrador']){
-        $_SESSION['administrador'] = $usuario['administrador'];
-      }
-      else{
-            $_SESSION['administrador']= 0;
-          }
-             PageHelpers::homePage();
+      $_SESSION['ultima_conexion'] = time();
+      $_SESSION['administrador'] = $usuario['administrador'];
+       PageHelpers::homePage();
     }
     else {
           PageHelpers::loginPage();

@@ -1,6 +1,6 @@
 <?php
 
-class UsuariosModel {
+class usuariosModel {
 
   private $db;
 
@@ -16,14 +16,14 @@ class UsuariosModel {
     $sentencia->execute([$email]);
     return $sentencia->fetch();
   }
-  
-    function retornarUsuario($id_usuario)
+
+  function retornarUsuario($id_usuario)
   {
     $sentencia = $this->db->prepare( "SELECT * from usuario where id_usuario = ?");
     $sentencia->execute([$id_usuario]);
     return $sentencia->fetch();
   }
-  
+
   function ingresarUsuario($usuario){
     $this->db->beginTransaction();
     $sentencia= $this->db->prepare("INSERT INTO usuario(email, pass, nombre, apellido) VALUES (?,?,?,?)");
@@ -37,16 +37,16 @@ class UsuariosModel {
       $sentencia->execute([$id_usuario]);
     }
 
-     function editarPermisos($id_usuario, $permiso){
+    function editarPermisos($id_usuario, $permiso){
       $sentencia= $this->db->prepare("UPDATE usuario SET administrador= ? where id_usuario= ?");
       $sentencia->execute([$permiso, $id_usuario]);
     }
-	
+
     function listarUsuarios(){
       $sentencia= $this->db->prepare("SELECT * from usuario");
       $sentencia->execute();
       return $sentencia->fetchAll();
     }
-    
+
 }
 ?>

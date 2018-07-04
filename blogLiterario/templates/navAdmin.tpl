@@ -20,7 +20,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{BASEURL}listarLibros">logout</a></li>
+        <li><a href="{BASEURL}logout">logout</a></li>
 
       </ul>
     <!-- </div><! /.navbar-collapse -->

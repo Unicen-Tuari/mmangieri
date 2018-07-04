@@ -19,7 +19,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{BASEURL}login">Login</a></li>
+        <li><a href="{BASEURL}logout">Logout</a></li>
 
       </ul>
     <!-- </div><! /.navbar-collapse -->
