@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-07-2018 a las 05:47:38
+-- Tiempo de generación: 04-07-2018 a las 05:40:21
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `blogliterario`
 --
+CREATE DATABASE IF NOT EXISTS `blogliterario` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `blogliterario`;
 
 -- --------------------------------------------------------
 
@@ -27,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 DROP TABLE IF EXISTS `autor`;
-CREATE TABLE `autor` (
+CREATE TABLE IF NOT EXISTS `autor` (
   `id_autor` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) NOT NULL,
   `biografia` text NOT NULL,
@@ -54,7 +56,7 @@ INSERT INTO `autor` (`id_autor`, `nombre`, `biografia`) VALUES
 --
 
 DROP TABLE IF EXISTS `libro`;
-CREATE TABLE `libro` (
+CREATE TABLE IF NOT EXISTS `libro` (
   `id_libro` int(11) NOT NULL AUTO_INCREMENT,
   `id_autor` int(11) NOT NULL,
   `titulo` varchar(100) NOT NULL,
@@ -88,7 +90,7 @@ INSERT INTO `libro` (`id_libro`, `id_autor`, `titulo`, `genero`, `sinopsis`) VAL
 --
 
 DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario` (
+CREATE TABLE IF NOT EXISTS `usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(25) NOT NULL,
   `pass` varchar(255) NOT NULL,
