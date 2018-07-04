@@ -1,6 +1,5 @@
 {include file="header.tpl"}
 {include file="navAdmin.tpl"}
-
 <div class="row">
     <div class="col-md-1 col-sm-1 col-xs-1">
     </div>
@@ -19,5 +18,4 @@
     <div class="col-md-1 col-sm-1 col-xs-1">
     </div>
 </div>
-
 {include file="footer.tpl"}

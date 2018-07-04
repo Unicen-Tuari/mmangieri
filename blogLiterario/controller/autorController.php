@@ -2,24 +2,24 @@
 require_once "./model/blogLiterarioModel.php";
 require_once "controller/SecureController.php";
 require_once "./view/adminView.php";
-require_once "./view/usuarioView.php";
+require_once "./view/usuarioLogueadoView.php";
 require_once "./view/blogLiterarioView.php";
 
 class autorController extends SecureController{
   private $adminView;
-  private $usuarioView;
+  private $usuarioLogueadoView;
   private $blogLiterarioView;
   private $blogLiterarioModel;
 
   function __construct(){
     $this->adminView= new adminView();
-    $this->usuarioView= new usuarioView();
+    $this->usuarioLogueadoView= new usuarioLogueadoView();
     $this->blogLiterarioView= new blogLiterarioView();
     $this->blogLiterarioModel= new blogLiterarioModel();
   }
   function crearAutor($params = []){
     session_start();
-    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
       $this->adminView->mostrarCrearAutor();
     }
   }
@@ -43,7 +43,7 @@ class autorController extends SecureController{
 
   function borrarAutor($params = []){
     session_start();
-    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+    if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
         $this->blogLiterarioModel->borrarAutor($params[0]);
         PageHelpers::AutoresPage();
       }
@@ -51,7 +51,7 @@ class autorController extends SecureController{
 
     function editarAutor($params = []){
       session_start();
-      if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+      if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
           $autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
           $this->adminView->mostrarEditarAutor($autor);
         }
@@ -60,12 +60,12 @@ class autorController extends SecureController{
     function mostrarAutores($params=[]){
       $autores= $this->blogLiterarioModel->obtenerAutores();
       session_start();
-      if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+      if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
           $this->adminView->mostrarAutores($autores);
       }
       else {
-        if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 0) ){
-            $this->usuarioView->mostrarAutores($autores);
+        if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '0') ){
+            $this->usuarioLogueadoView->mostrarAutores($autores);
         }
         else{
           $this->blogLiterarioView->mostrarAutores($autores);
@@ -76,12 +76,12 @@ class autorController extends SecureController{
     function mostrarDetalleAutor($params= []){
         $autor= $this->blogLiterarioModel->obtenerAutor($params[0]);
         session_start();
-        if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 1) ){
+        if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '1') ){
             $this->adminView->mostrarDetalleAutor($autor);
         }
         else {
-          if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == 0) ){
-            $this->usuarioView->mostrarDetalleAutor($autor);
+          if(isset($_SESSION['administrador']) && ($_SESSION['administrador'] == '0') ){
+            $this->usuarioLogueadoView->mostrarDetalleAutor($autor);
           }
           else{
             $this->blogLiterarioView->mostrarDetalleAutor($autor);

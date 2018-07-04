@@ -7,9 +7,11 @@ class LoginController {
   private $usuariosModel;
   private $loginView;
 
+
   function __construct(){
     $this->usuariosModel = new usuariosModel();
     $this->loginView = new LoginView();
+
   }
 
   function login($params = [])
@@ -40,7 +42,8 @@ class LoginController {
   }
 
   function  registrarse($params = []){
-      $this->loginView->registrarse();
+    $estado="hidden";
+      $this->loginView->registrarse($estado);
   }
 
 

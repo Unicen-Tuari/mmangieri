@@ -1,6 +1,5 @@
 {include file="header.tpl"}
 {include file="nav.tpl"}
-
 <h1 class="text-center">Autores</h1>
 
 <div class="row">

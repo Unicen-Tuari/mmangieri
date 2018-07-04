@@ -3,14 +3,19 @@ require_once "./model/usuariosModel.php";
 require_once "controller/SecureController.php";
 require_once "./view/usuarioView.php";
 
+require_once "./view/loginView.php";
+
+
 class usuariosController extends SecureController{
   private $usuariosModel;
   private $usuarioView;
+  private $loginView;
 
 
   function __construct(){
       $this->usuariosModel= new usuariosModel();
       $this->usuarioView= new usuarioView();
+      $this->loginView= new LoginView();
   }
 
   function listarUsuarios($params=[]){
@@ -21,20 +26,35 @@ class usuariosController extends SecureController{
     }
   }
 
+
+
   function ingresarUsuario($params = []){
+
     $hash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     $usuario= ['email'=> $_POST['email'],
                'pass'=> $hash,
                'nombre'=> $_POST['nombre'],
                'apellido'=> $_POST['apellido']
              ];
-    $this->usuariosModel->ingresarUsuario($usuario);
-    session_start();
-    $_SESSION['email'] = $usuario['email'];
-    $_SESSION['ultima_conexion'] = time();
-    $_SESSION['administrador'] = '0';
-      PageHelpers::homePage();
+    $verificarUsuario= $this->usuariosModel->obtenerUsuario($usuario['email']);
+    if ($verificarUsuario['email'] == $usuario['email']){
+        $estado= "visible";
+        $this->loginView->registrarse($estado);
+
+    }
+    else{
+        $this->usuariosModel->ingresarUsuario($usuario);
+        session_start();
+        $_SESSION['email'] = $usuario['email'];
+        $_SESSION['ultima_conexion'] = time();
+        $_SESSION['administrador'] = '0';
+
+        PageHelpers::homePage();
+    }
+
   }
+
+
 
   function editarPermisos($params = []){
      session_start();
@@ -61,3 +81,4 @@ class usuariosController extends SecureController{
 
 }
  ?>
+
